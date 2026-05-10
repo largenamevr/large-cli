@@ -1,0 +1,31 @@
+{
+  "name": "large-cli",
+  "version": "0.1.0",
+  "description": "A neon purple/blue terminal chat UI for Codex CLI",
+  "license": "MIT",
+  "type": "commonjs",
+  "bin": {
+    "large-cli": "./codex-tui.js"
+  },
+  "main": "./codex-tui.js",
+  "scripts": {
+    "start": "node ./codex-tui.js",
+    "check": "node ./codex-tui.js --check",
+    "preview": "node ./codex-tui.js --preview"
+  },
+  "keywords": [
+    "cli",
+    "tui",
+    "codex",
+    "chat",
+    "terminal"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "files": [
+    "codex-tui.js",
+    "README.md",
+    "package.json"
+  ]
+}

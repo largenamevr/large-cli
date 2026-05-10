@@ -1,0 +1,36 @@
+{
+  "name": "large-cli-vscode",
+  "displayName": "large-cli",
+  "description": "Open the large-cli Codex terminal UI from VS Code",
+  "version": "0.0.1",
+  "publisher": "aiden",
+  "engines": {
+    "vscode": "^1.85.0"
+  },
+  "categories": ["Other"],
+  "activationEvents": [
+    "onCommand:largeCli.open"
+  ],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "largeCli.open",
+        "title": "large-cli: Open Codex CLI"
+      }
+    ]
+  },
+  "scripts": {
+    "package": "vsce package"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.85.0",
+    "vsce": "^3.6.2"
+  },
+  "files": [
+    "extension.js",
+    "large-cli.js",
+    "README.md",
+    "package.json"
+  ]
+}

@@ -1,17 +1,22 @@
 {
   "name": "large-cli",
-  "version": "0.1.0",
+  "version": "0.3.3",
   "description": "A neon purple/blue terminal chat UI for Codex CLI",
   "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
   "type": "commonjs",
   "bin": {
-    "large-cli": "./codex-tui.js"
+    "large-cli": "bin/large-cli"
   },
   "main": "./codex-tui.js",
   "scripts": {
     "start": "node ./codex-tui.js",
     "check": "node ./codex-tui.js --check",
-    "preview": "node ./codex-tui.js --preview"
+    "preview": "node ./codex-tui.js --preview",
+    "termux:install": "bash ./scripts/termux-install.sh",
+    "termux:start": "bash ./scripts/termux-launch.sh"
   },
   "keywords": [
     "cli",
@@ -25,6 +30,8 @@
   },
   "files": [
     "codex-tui.js",
+    "bin/large-cli",
+    "scripts/*.sh",
     "README.md",
     "package.json"
   ]

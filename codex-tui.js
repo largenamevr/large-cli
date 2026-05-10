@@ -370,6 +370,9 @@ function buildScreen() {
     ? `${c(THEME.promptBusy, SPINNER[state.frame % SPINNER.length])} ${c(THEME.muted, 'thinking')}`
     : `${c(THEME.accentSoft, '●')} ${c(THEME.muted, 'idle')}`;
   const header = centerLine(`${c(THEME.title, 'large-cli')}  ${status}`, panelWidth);
+  const termuxWarning = isTermux
+    ? centerLine(c(THEME.accentAlt, '⚠ Termux/Android detected — running in the Termux shell.'), panelWidth)
+    : '';
   const banner = buildBanner(bodyWidth);
 
   const body = [];
@@ -392,7 +395,7 @@ function buildScreen() {
   const bodyCapacity = Math.max(0, height - 2 - banner.length - footer.length - 3);
   const visibleBody = body.slice(Math.max(0, body.length - bodyCapacity));
 
-  const content = [header, '', ...banner, ''];
+  const content = [header, ...(termuxWarning ? ['', termuxWarning] : []), '', ...banner, ''];
   for (const line of visibleBody) content.push(line);
   content.push('', ...footer);
 

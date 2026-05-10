@@ -52,6 +52,7 @@ npm run termux:start
 ```
 
 Notes:
+- The CLI detects Termux and shows a visible warning banner when running there.
 - The CLI detects Termux and prefers your active shell when launching Codex.
 - On Android, `codex` must be available in your PATH for the backend to work.
 - If your Termux shell is not Bash, the app falls back to `sh`.
